@@ -1,0 +1,7 @@
+.news_box {
+    display: flex;
+}
+
+.news_container {
+    width: 70%;
+}
