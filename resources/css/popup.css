@@ -1,0 +1,133 @@
+.overlay-bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    z-index: 1000;
+    background: #000;
+    background: rgba(0, 0, 0, 0.75);
+}
+
+.overlay-content {
+    display: none;
+    padding: 1%;
+    width: 600px;
+    height: 500px;
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    margin: 0 0 0 -20%;
+    cursor: default;
+    z-index: 10001;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.1px);
+    -webkit-backdrop-filter: blur(5.1px);
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    padding: 20px;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.popup_title {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.popup_container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popup_img {
+    width: 350px;
+}
+
+.popup_url {
+    background-color: #05abe0;
+    font-weight: 600;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup_url:hover {
+   background-color: #24bff3;
+}
+
+.popup_list {
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.popup_list p {
+    padding: 10px 20px;
+    background-color: #05abe0;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.popup_list p:hover {
+    background-color: #24bff3;
+}
+
+@media only screen and (min-width: 1400px) {}
+
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .overlay-content {
+        left: 45%;
+    }
+    .popup_img {
+        width: 300px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {}
+
+@media only screen and (min-width: 577px) and (max-width: 767px) {}
+
+@media only screen and (max-width: 576px) {
+    .overlay-content {
+        width: 95%;
+        left: 23%;
+        height: 330px;
+        top: 20%;
+    }
+
+    .popup_img {
+        width: 60%;
+    }
+
+    .popup_list {
+        padding: 5px 0;
+    }
+
+    .popup_list p {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+
+    .popup_title {
+        font-size: 16px;
+    }
+
+    .popup_url {
+        padding: 5px;
+        font-size: 13px;
+    }
+}
