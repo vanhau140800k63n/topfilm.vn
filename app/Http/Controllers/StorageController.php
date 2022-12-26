@@ -80,6 +80,7 @@ class StorageController extends Controller
 
                 $str .= '-full-hd-vietsub'. '-' . $movie->category . $movie->id .'.html';
                 $movie->slug = $str;
+                $movie->is_change_slug = 1;
                 $movie->save();
             }
             unset($movie_list[$key]);

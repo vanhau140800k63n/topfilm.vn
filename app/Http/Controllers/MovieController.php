@@ -172,7 +172,8 @@ class MovieController extends Controller
                 $str = substr($str, 0, strlen($str) - 1);
             }
 
-            $str .= '-full-hd-vietsub.html';
+            $str .= '-full-hd-vietsub'. '-' . $movie->category . $movie->id .'.html';
+            $movie->is_change_slug = 1;
             $movie->slug = $str;
             $movie->save();
         } 
@@ -185,13 +186,6 @@ class MovieController extends Controller
         $movie_detail = Movie::where('slug', $name)->first();
         if ($movie_detail == null) {
             throw new PageException();
-        }
-        if ($movie_detail->is_change_slug === 0) {
-            $pos = strpos($movie_detail->slug, '.html');
-            $movie_detail->update(['is_change_slug' => 1, 'slug' => substr($movie_detail->slug, 0, $pos) . '-' . $movie_detail->category . $movie_detail->id . substr($movie_detail->slug, $pos)]);
-            $movie_detail->save();
-
-            return redirect()->route('detail_name', $movie_detail->slug);
         }
 
         $episode_id = 0;
@@ -233,13 +227,6 @@ class MovieController extends Controller
         $movie_detail = Movie::where('slug', $name)->first();
         if ($movie_detail == null) {
             throw new PageException();
-        }
-        if ($movie_detail->is_change_slug === 0) {
-            $pos = strpos($movie_detail->slug, '.html');
-            $movie_detail->update(['is_change_slug' => 1, 'slug' => substr($movie_detail->slug, 0, $pos) . '-' . $movie_detail->category . $movie_detail->id . substr($movie_detail->slug, $pos)]);
-            $movie_detail->save();
-
-            return redirect()->route('detail_name', $movie_detail->slug);
         }
 
         $url = route('detail_name', $name);
