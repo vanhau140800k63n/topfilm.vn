@@ -276,7 +276,7 @@ class MovieController extends Controller
     private function getEpisode($category, $id, $episodeId, $definition)
     {
         $movieService = new MovieService();
-        $url = 'https://ga-mobile-api.loklok.tv/cms/app/media/previewInfo?category=' . $category . '&contentId=' . $id . '&episodeId=' . $episodeId . '&definition=' . $definition;
+        $url = 'http://ga-mobile-api.juzhangvideo.com/juzhangvideo/media/previewInfo?category=1&category=' . $category . '&contentId=' . $id . '&episodeId=' . $episodeId . '&definition=' . $definition;
         $media = $movieService->getData($url);
 
         while ($media == null) {
